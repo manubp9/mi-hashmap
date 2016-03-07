@@ -80,16 +80,4 @@ public class MiHashMap
         }
         return valorAntiguo;
     }
-
-    /**
-     * devuelve true si el mapa no contiene elementos.
-     */
-    public boolean isEmpty()
-    {
-        boolean vacio = false;
-        if(letras.length == 0 && numeros.length == 0 )
-        {
-            vacio =true;
-        }
-        return vacio;
-    }}
+}
