@@ -22,14 +22,74 @@ public class MiHashMap
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Asocia el valor especificado con la clave especificada. 
+     * Si la clave existía, entonces sobreescribe su valor y devuelve el valor antiguo. 
+     * Si no existía devuelve -1. 
      */
-    public int sampleMethod(int y)
+    public int put(String clave, int valor)
     {
-        // put your code here
-        return x + y;
+        boolean encontrado= false;//interruptor logico para devolver si hay ese elemento en la lista 
+        int valorAntiguo = -1;
+        int index = 0;
+        int indexEncontrado = 0;
+        while(index < letras.length && !(encontrado))//
+        {
+            if(letras[index]==clave)
+            {
+                encontrado = true;
+                indexEncontrado = index;
+
+            }
+            index++;
+
+        }
+        if(encontrado)
+        {
+            valorAntiguo = numeros[index];
+            numeros[index]= valor;
+
+        }
+        return valorAntiguo;
+
     }
-}
+
+    /**
+     * Devuelve el valor asociado con la clave especificada o -1 en caso de que la clave no exista.
+     */
+    public int get(String clave)
+    {
+        boolean encontrado= false;//interruptor logico para devolver si hay ese elemento en la lista 
+        int valorAntiguo = -1;
+        int index = 0;
+        int indexEncontrado = 0;
+        while(index < letras.length && !(encontrado))//
+        {
+            if(letras[index]==clave)
+            {
+                encontrado = true;
+                indexEncontrado = index;
+
+            }
+            index++;
+
+        }
+        if(encontrado)
+        {
+            valorAntiguo = numeros[index];
+
+        }
+        return valorAntiguo;
+    }
+
+    /**
+     * devuelve true si el mapa no contiene elementos.
+     */
+    public boolean isEmpty()
+    {
+        boolean vacio = false;
+        if(letras.length == 0 && numeros.length == 0 )
+        {
+            vacio =true;
+        }
+        return vacio;
+    }}
