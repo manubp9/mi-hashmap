@@ -100,4 +100,13 @@ public class MiHashMap
     {
         return letras.length;
     }
+    
+    /**
+     * vacia el mapa
+     */
+    public void clear()
+    {
+        letras = new String[0];
+        numeros = new int[0];
+    }
 }
